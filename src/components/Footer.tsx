@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="text-sm text-muted-foreground text-center">
             Final Year Project - AI-Based Screen Damage Detection
             <br />
-            <span className="text-xs">University of South Asia © 2025</span>
+            <span className="text-xs">University of South Asia © 2026</span>
           </div>
 
           <div className="flex items-center gap-4">
