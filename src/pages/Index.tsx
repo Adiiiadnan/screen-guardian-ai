@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import UploadSection from "@/components/UploadSection";
+import RepairShopLocator from "@/components/RepairShopLocator";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
         <FeaturesSection />
         <HowItWorksSection />
         <UploadSection ref={uploadRef} />
+        <RepairShopLocator />
       </main>
       <Footer />
     </div>
