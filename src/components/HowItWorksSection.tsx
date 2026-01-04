@@ -1,6 +1,7 @@
 import { Upload, Cpu, FileText, ArrowRight } from "lucide-react";
-import damagedScreen from "@/assets/damaged-screen.webp";
-import smartphones from "@/assets/smartphones.webp";
+import crackedScreen from "@/assets/cracked-screen.webp";
+import screenScanning from "@/assets/screen-scanning.webp";
+import damageReport from "@/assets/damage-report.webp";
 
 const steps = [
   {
@@ -64,26 +65,37 @@ const HowItWorksSection = () => {
               <div className="space-y-4">
                 <div className="glass-card p-2 rounded-2xl overflow-hidden">
                   <img 
-                    src={damagedScreen} 
-                    alt="Damaged Screen Example" 
+                    src={crackedScreen} 
+                    alt="Cracked Screen Example" 
                     className="w-full h-48 object-cover rounded-xl"
                   />
                   <div className="p-3">
-                    <div className="text-xs text-muted-foreground">Before Analysis</div>
-                    <div className="text-sm font-medium text-foreground">Cracked Screen</div>
+                    <div className="text-xs text-muted-foreground">Step 1</div>
+                    <div className="text-sm font-medium text-foreground">Upload Image</div>
+                  </div>
+                </div>
+                <div className="glass-card p-2 rounded-2xl overflow-hidden">
+                  <img 
+                    src={damageReport} 
+                    alt="Damage Report Dashboard" 
+                    className="w-full h-48 object-cover rounded-xl"
+                  />
+                  <div className="p-3">
+                    <div className="text-xs text-muted-foreground">Step 3</div>
+                    <div className="text-sm font-medium text-foreground">Get Report</div>
                   </div>
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="glass-card p-2 rounded-2xl overflow-hidden">
                   <img 
-                    src={smartphones} 
-                    alt="Smartphone Collection" 
+                    src={screenScanning} 
+                    alt="AI Screen Scanning" 
                     className="w-full h-48 object-cover rounded-xl"
                   />
                   <div className="p-3">
-                    <div className="text-xs text-muted-foreground">Compatible Devices</div>
-                    <div className="text-sm font-medium text-foreground">All Smartphones</div>
+                    <div className="text-xs text-muted-foreground">Step 2</div>
+                    <div className="text-sm font-medium text-foreground">AI Analysis</div>
                   </div>
                 </div>
               </div>

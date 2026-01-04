@@ -12,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import repairTechnician from "@/assets/repair-technician.webp";
 
 interface RepairShop {
   id: number;
@@ -323,8 +324,13 @@ const RepairShopLocator = () => {
           <div className="lg:col-span-2">
             <div className="glass-card rounded-2xl overflow-hidden h-[600px] relative">
               {!isMapLoaded ? (
-                <div className="absolute inset-0 flex items-center justify-center bg-card">
-                  <div className="text-center">
+                <div className="absolute inset-0 flex items-center justify-center bg-card overflow-hidden">
+                  <img 
+                    src={repairTechnician} 
+                    alt="Repair Technician" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-30"
+                  />
+                  <div className="text-center relative z-10">
                     <Navigation className="w-12 h-12 text-primary mx-auto mb-4 animate-pulse" />
                     <p className="text-muted-foreground">
                       Enter your Mapbox token to view the map
