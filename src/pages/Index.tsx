@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import PricingSection from "@/components/PricingSection";
@@ -19,6 +20,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection onScrollToUpload={scrollToUpload} />
+        <AboutSection />
         <FeaturesSection />
         <HowItWorksSection />
         <PricingSection />
