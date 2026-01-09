@@ -39,7 +39,7 @@ const HeroSection = ({ onScrollToUpload }: HeroSectionProps) => {
               <Button 
                 size="lg" 
                 onClick={onScrollToUpload}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 rounded-xl shadow-[0_4px_20px_hsl(175_85%_45%_/_0.3)] hover:shadow-[0_6px_30px_hsl(175_85%_45%_/_0.4)] transition-all duration-300"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 rounded-xl shadow-[0_4px_20px_hsl(38_70%_55%_/_0.3)] hover:shadow-[0_6px_30px_hsl(38_70%_55%_/_0.4)] transition-all duration-300"
               >
                 <Upload className="w-5 h-5 mr-2" />
                 Start Analysis
