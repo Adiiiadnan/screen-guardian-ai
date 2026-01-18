@@ -8,70 +8,70 @@
 
 @layer base {
   :root {
-    --background: 220 10% 6%;
-    --foreground: 40 15% 92%;
+    --background: 210 20% 98%;
+    --foreground: 210 40% 12%;
 
-    --card: 220 8% 10%;
-    --card-foreground: 40 15% 92%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 12%;
 
-    --popover: 220 8% 12%;
-    --popover-foreground: 40 15% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 12%;
 
-    --primary: 38 70% 55%;
-    --primary-foreground: 220 10% 6%;
+    --primary: 172 66% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 8% 16%;
-    --secondary-foreground: 40 15% 92%;
+    --secondary: 210 15% 93%;
+    --secondary-foreground: 210 40% 20%;
 
-    --muted: 220 8% 14%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 210 20% 45%;
 
-    --accent: 32 60% 45%;
-    --accent-foreground: 40 15% 95%;
+    --accent: 172 50% 38%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 65% 50%;
-    --destructive-foreground: 40 15% 95%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --success: 145 60% 42%;
-    --success-foreground: 220 10% 6%;
+    --success: 160 60% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --warning: 42 90% 55%;
-    --warning-foreground: 220 10% 6%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 40% 12%;
 
-    --border: 220 8% 18%;
-    --input: 220 8% 14%;
-    --ring: 38 70% 55%;
+    --border: 210 20% 88%;
+    --input: 210 20% 90%;
+    --ring: 172 66% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom gradients - warm gold tones with 3D depth */
-    --gradient-primary: linear-gradient(135deg, hsl(38 70% 55%) 0%, hsl(28 65% 48%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(32 60% 45%) 0%, hsl(25 55% 38%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(220 12% 10%) 0%, hsl(225 15% 6%) 50%, hsl(230 18% 3%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 8% 12%) 0%, hsl(220 8% 8%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(38 70% 55% / 0.12) 0%, transparent 70%);
+    /* Custom gradients - clean teal tones */
+    --gradient-primary: linear-gradient(135deg, hsl(172 66% 45%) 0%, hsl(172 60% 35%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(172 50% 38%) 0%, hsl(180 45% 30%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(210 25% 97%) 0%, hsl(210 20% 94%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 15% 98%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(172 66% 45% / 0.08) 0%, transparent 70%);
     
-    /* 3D Background layers */
-    --gradient-3d-base: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(38 50% 20% / 0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse 60% 40% at 80% 80%, hsl(220 30% 8% / 0.8) 0%, transparent 50%),
-                        radial-gradient(ellipse 70% 50% at 20% 90%, hsl(225 25% 6% / 0.6) 0%, transparent 50%),
-                        linear-gradient(180deg, hsl(220 12% 10%) 0%, hsl(225 15% 5%) 40%, hsl(230 20% 2%) 100%);
-    --gradient-3d-overlay: radial-gradient(circle at 30% 20%, hsl(38 60% 50% / 0.05) 0%, transparent 40%),
-                           radial-gradient(circle at 70% 60%, hsl(32 50% 40% / 0.04) 0%, transparent 35%);
+    /* 3D Background layers - light theme */
+    --gradient-3d-base: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(172 40% 85% / 0.4) 0%, transparent 50%),
+                        radial-gradient(ellipse 60% 40% at 80% 80%, hsl(210 20% 96% / 0.8) 0%, transparent 50%),
+                        radial-gradient(ellipse 70% 50% at 20% 90%, hsl(210 25% 94% / 0.6) 0%, transparent 50%),
+                        linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(210 15% 96%) 40%, hsl(210 20% 94%) 100%);
+    --gradient-3d-overlay: radial-gradient(circle at 30% 20%, hsl(172 50% 70% / 0.08) 0%, transparent 40%),
+                           radial-gradient(circle at 70% 60%, hsl(172 40% 60% / 0.05) 0%, transparent 35%);
     
-    /* Shadows - warm gold glow */
-    --shadow-glow: 0 0 40px hsl(38 70% 55% / 0.15);
-    --shadow-card: 0 8px 32px hsl(220 30% 3% / 0.6);
-    --shadow-button: 0 4px 20px hsl(38 70% 55% / 0.25);
+    /* Shadows - soft teal glow */
+    --shadow-glow: 0 0 40px hsl(172 66% 45% / 0.12);
+    --shadow-card: 0 8px 32px hsl(210 30% 20% / 0.08);
+    --shadow-button: 0 4px 20px hsl(172 66% 45% / 0.2);
 
-    --sidebar-background: 220 8% 8%;
-    --sidebar-foreground: 40 15% 92%;
-    --sidebar-primary: 38 70% 55%;
-    --sidebar-primary-foreground: 220 10% 6%;
-    --sidebar-accent: 220 8% 14%;
-    --sidebar-accent-foreground: 40 15% 92%;
-    --sidebar-border: 220 8% 18%;
-    --sidebar-ring: 38 70% 55%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 40% 12%;
+    --sidebar-primary: 172 66% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 95%;
+    --sidebar-accent-foreground: 210 40% 20%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 172 66% 45%;
   }
 }
 
@@ -148,7 +148,7 @@
   }
 
   .scan-line {
-    background: linear-gradient(90deg, transparent 0%, hsl(38 70% 55% / 0.6) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, hsl(172 66% 45% / 0.6) 50%, transparent 100%);
     animation: scan 2s ease-in-out infinite;
   }
 
@@ -158,8 +158,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(38 70% 55% / 0.25); }
-    50% { box-shadow: 0 0 40px hsl(38 70% 55% / 0.4); }
+    0%, 100% { box-shadow: 0 0 20px hsl(172 66% 45% / 0.25); }
+    50% { box-shadow: 0 0 40px hsl(172 66% 45% / 0.4); }
   }
 
   @keyframes float {
