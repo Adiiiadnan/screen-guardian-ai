@@ -1,4 +1,5 @@
 import { Users, Target, TrendingUp, Zap, Smartphone, Cpu, Lightbulb, HelpCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const aboutItems = [
   {
@@ -43,60 +44,160 @@ const aboutItems = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.4 },
+  },
+};
+
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="about" className="py-24 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
+      
+      {/* Decorative elements */}
+      <motion.div 
+        className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.2, 0.4] }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.span 
+            className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            About Us
+          </motion.span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">Why ScreenScan AI?</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Understanding the problem we solve and why our solution matters.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <motion.div 
+          className="grid md:grid-cols-2 gap-6 mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {aboutItems.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="glass-card p-6 rounded-2xl hover:border-primary/30 transition-all duration-300 group"
+              variants={itemVariants}
+              whileHover={{ 
+                y: -5, 
+                scale: 1.01,
+                transition: { type: "spring", stiffness: 400 }
+              }}
+              className="group"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              <div className="glass-card p-6 rounded-2xl hover:border-primary/40 transition-all duration-300 h-full relative overflow-hidden">
+                {/* Hover glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="flex items-start gap-4 relative z-10">
+                  <motion.div 
+                    className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <item.icon className="w-6 h-6 text-primary" />
+                  </motion.div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Why We Need It Section */}
-        <div className="glass-card p-8 rounded-2xl border-primary/20">
-          <div className="flex items-start gap-4">
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-              <HelpCircle className="w-7 h-7 text-primary" />
-            </div>
+        <motion.div 
+          className="glass-card p-8 rounded-3xl border-primary/20 relative overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+          
+          <div className="flex items-start gap-4 relative z-10">
+            <motion.div 
+              className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0"
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            >
+              <HelpCircle className="w-8 h-8 text-primary" />
+            </motion.div>
             <div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">Why Do We Need This?</h3>
-              <div className="space-y-3 text-muted-foreground">
-                <p>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">Why Do We Need This?</h3>
+              <div className="space-y-4 text-muted-foreground">
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
                   <strong className="text-foreground">The Problem:</strong> Every year, millions of smartphones suffer screen damage. Users waste hours visiting multiple repair shops, getting inconsistent quotes, and struggling with insurance claims that require proper documentation.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
                   <strong className="text-foreground">The Gap:</strong> There is no standardized way to assess screen damage. Repair costs vary wildly, and insurance companies often dispute claims due to lack of objective evidence.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
                   <strong className="text-foreground">Our Answer:</strong> ScreenScan AI bridges this gap with AI-powered, unbiased damage assessment that benefits everyone—users get fair pricing, repair shops get qualified leads, and insurers get reliable documentation.
-                </p>
+                </motion.p>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
